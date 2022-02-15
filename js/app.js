@@ -1,4 +1,6 @@
 'use strict';
+let sammonCookies = document.getElementById('samsales');
+
 let openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm' ];
 
 let seattle = {
@@ -17,6 +19,13 @@ let seattle = {
     for(let j=0; j<openHours.length; j++){
       this.cookiesSoldPerHour.push(Math.round(this.custHr[j] * this.avgCookiesPerCust));
     }
+  },
+  getCookieTotal: function(){
+    let total = 0;
+    for(let i=0; i<this.cookiesSoldPerHour.length; i++){
+      total += this.cookiesSoldPerHour[i];
+    }
+    return total;
   }
 };
 
@@ -131,4 +140,26 @@ lima.totCookiesPerHr();
 console.log(lima);
 
 
+seattle.render = function(){
+  //define
+  let h2Elem = document.createElement('h2');
+  //context
+  h2Elem.textContent = this.location;
+  //add to dom
+  sammonCookies.appendChild(h2Elem);
 
+  //create ul
+  let ulElem =document.createElement('ul');
+  sammonCookies.appendChild(ulElem);
+  // create li
+  for(let i=0; i<this.openHours.length;i++){
+    let hourlySales = `${this.openHours[i]} ${this.cookiesSoldPerHour[i]}`;
+    let liElem = document.createElement('li');
+    liElem.textContent = hourlySales;
+    ulElem.appendChild(liElem);
+  }
+  let totalCookiesInMouths = `Total: ${this.getCookieTotal()} cookies`;
+  let liElem = document.createElement('li');
+  liElem.textContent = totalCookiesInMouths;
+  ulElem.appendChild(liElem);
+};
