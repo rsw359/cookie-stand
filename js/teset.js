@@ -70,6 +70,7 @@ CookieShop.prototype.generateTable = function generateTable(){
   document.querySelector('main').appendChild(sammonTable);
 };
 
+///table header
 let row = document.createElement('tr');
 for(let i=0; i < openHours.length; i++){
   let storeHeaders = document.createElement('th');
