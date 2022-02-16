@@ -1,7 +1,7 @@
 let sammonCookies = document.getElementById('samsales');
-
 const sammonTable = document.createElement('table');
 const tableBody = document.createElement('tbody');
+sammonTable.setAttribute('id', 'sammin-table');
 
 let allShops = [];
 let openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm' ];
@@ -19,7 +19,12 @@ function CookieShop(location, minCust, maxCust, avgCookiesPerCust){
 
   allShops.push(this);
 }
-
+// cookiesSoldPerHour.push(){
+//   dailyTotal = 0
+//   for(j = 0; j < cookiesSoldPerHour.length; j++){
+//     dailyTotal += this.
+//   }
+// }
 function randomAvg(min, max) {//gets random num
   return Math.floor(Math.random()* (max - min +1) + min);
 }
@@ -44,18 +49,20 @@ CookieShop.prototype.getCookieTotal= function(){
   return total;
 };
 
+// CookieShop.prototype.hourlyGrandTotals = function
+
 
 CookieShop.prototype.generateTable = function generateTable(){
 
   let row = document.createElement('tr');
-  console.log('a', this.cookiesSoldPerHour);
+  console.log(this.cookiesSoldPerHour);
   let storeNameCell = document.createElement('td');
   let storeNameCellTxt = document.createTextNode(`${this.location}`);
   storeNameCell.appendChild(storeNameCellTxt);
   row.appendChild(storeNameCell);
 
 
-  for(let j = 0; j < this.cookiesSoldPerHour.length; j++){
+  for(let j = 0; j <= this.cookiesSoldPerHour.length; j++){
     let cell = document.createElement('td');
 
     let cellText = document.createTextNode(`${this.cookiesSoldPerHour[j]} cookies`);
@@ -72,7 +79,8 @@ CookieShop.prototype.generateTable = function generateTable(){
 
 ///table header
 let row = document.createElement('tr');
-for(let i=0; i < openHours.length; i++){
+
+for(let i=0; i === openHours.length; i++){
   let storeHeaders = document.createElement('th');
   let openHoursHeaders = document.createTextNode(`${openHours[i]}`);
   storeHeaders.appendChild(openHoursHeaders);
@@ -80,6 +88,9 @@ for(let i=0; i < openHours.length; i++){
 }
 tableBody.appendChild(row);
 sammonTable.appendChild(tableBody);
+
+///footer
+
 
 
 const seattle = new CookieShop('Seattle', 23, 65, 6.3);
