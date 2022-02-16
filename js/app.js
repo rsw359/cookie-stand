@@ -1,15 +1,16 @@
 'use strict';
-let sammonCookies = document.getElementById('samsales');
+
 
 let openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm' ];
 
 let seattle = {
-  location: 'seattle',
+  location: 'Seattle',
   minCust: 23,
   maxCust: 65,
   avgCookiesPerCust: 6.3,
   custHr: [],
   cookiesSoldPerHour: [],
+
   totCustHr: function() {//get random number between min/max cust, push to array custHR
     for(let i=0; i < openHours.length; i++ ){
       this.custHr.push(randomAvg(this.minCust,this.maxCust));
@@ -39,7 +40,7 @@ console.log(seattle);
 ///Tokyo
 
 let tokyo = {
-  location: 'tokyo',
+  location: 'Tokyo',
   minCust: 3,
   maxCust: 24,
   avgCookiesPerCust: 1.2,
@@ -72,7 +73,7 @@ console.log(tokyo);
 //Dubai
 
 let dubai = {
-  location: 'dubai',
+  location: 'Dubai',
   minCust: 11,
   maxCust: 38,
   avgCookiesPerCust: 3.7,
@@ -91,6 +92,7 @@ let dubai = {
   getCookieTotal: function(){
     let total = 0;
     for(let i=0; i<this.cookiesSoldPerHour.length; i++){
+      //total += adds each index to the next
       total += this.cookiesSoldPerHour[i];
     }
     return total;
@@ -105,7 +107,7 @@ console.log(dubai);
 //Paris
 
 let paris = {
-  location: 'paris',
+  location: 'Paris',
   minCust: 20,
   maxCust: 38,
   avgCookiesPerCust: 2.3,
@@ -137,7 +139,7 @@ console.log(paris);
 //Lima
 
 let lima = {
-  location: 'lima',
+  location: 'Lima',
   minCust: 2,
   maxCust: 16,
   avgCookiesPerCust: 4.6,
@@ -167,6 +169,8 @@ lima.totCustHr();
 lima.totCookiesPerHr();
 console.log(lima);
 
+////////////RENDERS///DOM /////////
+let sammonCookies = document.getElementById('samsales');
 
 seattle.render = function(){
   //define
