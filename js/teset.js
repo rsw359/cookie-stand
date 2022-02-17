@@ -1,7 +1,13 @@
+const sammonTable = document.createElement('table');
+
+//parent element for table
 let sammonCookies = document.getElementById('samsales');//js window
-const sammonTable = document.createElement('table');//parent element for table
-const tableBody = document.createElement('tbody');
+
 // sammonTable.setAttribute('id', 'sammin-table');
+const tableBody = document.createElement('tbody');
+
+//event listener/submit buton
+let shopForm = document.getElementById('shop-form');
 
 let allShops = [];
 let openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
@@ -87,6 +93,9 @@ dailyTotalHdr.textContent = 'Daily Tots';
 row.appendChild(dailyTotalHdr);
 sammonTable.appendChild(tableBody);
 
+
+
+
 /////calls
 const seattle = new CookieShop('Seattle', 23, 65, 6.3);
 const tokyo = new CookieShop('Tokyo', 3, 24, 1.2);
@@ -117,8 +126,30 @@ for(let i = 0;i < openHours.length; i++){
   let hrlyShpTotal = document.createElement ('td');
   hrlyShpTotal.textContent = total;
   footerRow.appendChild(hrlyShpTotal);
-  console.log(total);
+  // console.log(total);
+}
+
+function handleSubmit(event){
+  event.preventDefault();
+  let location = event.target.shopLocation.value;
+  console.log(location);
+
+  let minCust = event.target.minCust.value;
+  console.log(minCust);
+
+  let maxCust = event.target.maxCust.value;
+  console.log(maxCust);
+
+  let avgCookiesPerCust = event.target.avgPerCust.value;
+  console.log(avgCookiesPerCust);
+
+  let newShop = new CookieShop(location, minCust, maxCust, avgCookiesPerCust);
+
+  newShop.generateTable();
+
+  shopForm.reset();
+
 }
 
 
-
+shopForm.addEventListener('submit', handleSubmit);
