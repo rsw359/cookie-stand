@@ -145,9 +145,33 @@ function handleSubmit(event){
 
   const newShop = new CookieShop(location, minCust, maxCust, avgCookiesPerCust);
 
+  sammonTable.deleteRow(-1);
+
   newShop.generateTable();
 
+  let footerRow = document.createElement('tr');
+  tableBody.appendChild(footerRow);
+
+  let worldHrTots = document.createElement('td');
+  worldHrTots.textContent = 'Hourly Totals';
+  footerRow.appendChild(worldHrTots);
+
+  for(let i = 0;i < openHours.length; i++){
+    let total = 0;
+    for (let j = 0; j < allShops.length; j++){
+      total += allShops[j].cookiesSoldPerHour[i];
+    }
+    let hrlyShpTotal = document.createElement ('td');
+    hrlyShpTotal.textContent = total;
+    footerRow.appendChild(hrlyShpTotal);
+  // console.log(total);
+  }
+
+  // newShop.generateTable();
+
   shopForm.reset();
+
+
 
 }
 
