@@ -1,7 +1,7 @@
 let sammonCookies = document.getElementById('samsales');//js window
 const sammonTable = document.createElement('table');//parent element for table
 const tableBody = document.createElement('tbody');
-sammonTable.setAttribute('id', 'sammin-table');
+// sammonTable.setAttribute('id', 'sammin-table');
 
 let allShops = [];
 let openHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
@@ -106,7 +106,7 @@ let footerRow = document.createElement('tr');
 tableBody.appendChild(footerRow);
 
 let worldHrTots = document.createElement('td');
-worldHrTots.textContent = 'total';
+worldHrTots.textContent = 'Hourly Totals';
 footerRow.appendChild(worldHrTots);
 
 for(let i = 0;i < openHours.length; i++){
