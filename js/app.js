@@ -170,7 +170,7 @@ lima.totCookiesPerHr();
 console.log(lima);
 
 ////////////RENDERS///DOM /////////
-let sammonCookies = document.getElementById('samsales');
+
 
 seattle.render = function(){
   //define
