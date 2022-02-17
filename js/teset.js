@@ -143,7 +143,7 @@ function handleSubmit(event){
   let avgCookiesPerCust = event.target.avgPerCust.value;
   console.log(avgCookiesPerCust);
 
-  let newShop = new CookieShop(location, minCust, maxCust, avgCookiesPerCust);
+  const newShop = new CookieShop(location, minCust, maxCust, avgCookiesPerCust);
 
   newShop.generateTable();
 
