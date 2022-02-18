@@ -180,8 +180,11 @@ function handleSubmit(event){
     let hrlyShpTotal = document.createElement ('td');
     hrlyShpTotal.textContent = total;
     footerRow.appendChild(hrlyShpTotal);
-  // console.log(total);
+    // console.log(total);
   }
+  let grandTotal = document.createElement('td');//rerenders the grandTotal
+  grandTotal.textContent = totalOfTotals;
+  footerRow.appendChild(grandTotal);
   shopForm.reset();
 }
 shopForm.addEventListener('submit', handleSubmit);
