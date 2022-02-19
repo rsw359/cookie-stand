@@ -1,4 +1,4 @@
-body {
+#sales-body {
   background-color: rgb(77, 83, 83);
 }
 
@@ -6,7 +6,7 @@ body {
   text-align: center;
   margin-top: 50px;
   font-size: 70px;
-  font-family: ;
+  
 } 
 
 #samwerd {
@@ -27,7 +27,7 @@ body {
 #we-heer {
   color: salmon;
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 #sales-h2 {
@@ -36,12 +36,14 @@ body {
 }
 
 table {
+  font-family: sans-serif;
   width: 50%;
   margin: auto;  
   margin-top: 50px;
   background-color: bisque;
   border-radius: 10px;
   border: solid; 
+
   
 }
 
@@ -52,9 +54,12 @@ tr {
 
 }
 
-td{ 
-  border: solid
- 
+th { 
+  border: solid 
+}
+
+td { 
+  border: solid 
 }
 
 #sales-container-1 {
@@ -96,6 +101,8 @@ td{
 
 }
 #home-h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   color: salmon;
   text-align: center;
   font-size: 70px ;
@@ -114,11 +121,14 @@ body {
   }
 
   #catchphrase {
+    font-family: 'Roboto', sans-serif;
     color: salmon;
     text-align: center;
     font-size: 50px;
   }
  p {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Scope One', serif;
   color: salmon;
   font-size: medium;
   font-style: italic;
@@ -137,6 +147,7 @@ body {
     align-items: center;
   }
    #randos {
+     margin-top: -20px;
      width: 600px;     
    }
 
@@ -166,13 +177,16 @@ body {
   }
 
   #cmd {
+    font-weight: bold;
     text-align: center;
     font-size: 100px;
   }
 
   #shop-splash {
+    margin: 2%;
     text-align: center;
   }
+  
 
 
   
