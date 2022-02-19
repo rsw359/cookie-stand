@@ -5,24 +5,28 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css"> 
 </head>
-<body>
+<body id="sales-body">
   <h1 id = "sales-flash">EAT A <strong id = "samwerd">Sammon</strong></h1>
-  <main>
+  <main class="">
     
     <h2 id = "sales-h2">Sammon Sales</h2>
+    <p id = 'we-heer'>We have seen considerable growth in our sales of our almost good tasting cookies. Our CEO just bought a new "used" 2012 Lexus.</p>
+
     <table id="samsales"></table>
 
-    <p id = 'we-heer'>WE OUT HEER GITTIN THIS SAMMIN MONEY</p>
   </main>
+  <div id="sales-container-1">
 
-  <p id = "subheader">THOUSANDS OF DOLLARS WORLDWIDE</p>
-  
+  <p  id = "subheader">THOUSANDS OF DOLLARS WORLDWIDE</p>
   <img id = "granny" src="img/granny.gif" alt="">
   <p id = "under-gif">SAMMINS!</p>
 
-  <form id='shop-form'>
-    <fieldset>
-      <legend>Add a Shop</legend>
+  </div>
+
+  <div id="sales-container-2">
+    <form id='shop-form'>
+     <fieldset>
+        <legend>Add a Shop</legend>
         <label for="shopLocation">Location</label>
         <input type="text" name="shopLocation" id="shopLocation">
 
@@ -35,10 +39,12 @@
         <label for="avgPerCust">Average Cookies Per Customer</label>
         <input type="text" name="avgPerCust"id="avgPerCust">   
 
-    </fieldset>
-    <button type="submit">submit</button>
-  </form>
+      </fieldset>
+      <button type="submit">submit</button>
+    </form>
+  </div>
 
-  <script src="js/teset.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
+<hr>
