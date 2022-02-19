@@ -56,7 +56,6 @@ CookieShop.prototype.getCookieTotal= function(){
   return total;
 };
 
-// CookieShop.prototype.hourlyGrandTotals = function
 
 /////Table Start Line 50 - 75
 CookieShop.prototype.generateRow = function(){
