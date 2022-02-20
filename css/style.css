@@ -187,7 +187,12 @@ body {
     text-align: center;
   }
   
+  #container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+  }
 
   
  
